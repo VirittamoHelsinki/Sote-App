@@ -7,7 +7,8 @@ function VerensokeriPage({
   personData,
   setPersonData,
   NEWSscoreTotal,
-  ControlNEWSscoreTotal
+  ControlNEWSscoreTotal,
+  addNewReport
 }) {
   return (
     <Page
@@ -24,6 +25,7 @@ function VerensokeriPage({
           onClick={() => {
             window.scrollTo(0, 0);
             if (!NEWSscoreTotal && !ControlNEWSscoreTotal) {
+              addNewReport();
               history.push("/instructionPageTwo");
             } else {
               history.push("/instructionPage");

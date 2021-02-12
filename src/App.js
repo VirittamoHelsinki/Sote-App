@@ -289,6 +289,7 @@ function App() {
                         history={history}
                         NEWSscoreTotal={NEWSscoreTotal}
                         ControlNEWSscoreTotal={ControlNEWSscoreTotal}
+                        addNewReport={addNewReport}
                         {...props}
                       />
                     )}

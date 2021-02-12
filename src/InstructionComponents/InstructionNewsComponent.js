@@ -9,9 +9,9 @@ function InstructionNewsComponent({
   ControlCardVisibility,
   setControlCardVisibility,
   controlData,
-  setcontrolData
+  setcontrolData,
+  addNewReport
 }) {
-
   return (
     <div>
       {controlData["Hengitystaajuus - NEWSscore"] >= 1 ? (
@@ -139,15 +139,16 @@ function InstructionNewsComponent({
             name={"Tajunnan taso"}
           />
           <div className="news-huomio">
-        <div id="news">* NEWS-pisteet:</div>{" "}
-        <br />
-        <div id="green">Normaali = 0p</div>{" , "}
-        <div id="red">Poikkeava = 3p</div>
-      </div>
+            <div id="news">* NEWS-pisteet:</div> <br />
+            <div id="green">Normaali = 0p</div>
+            {" , "}
+            <div id="red">Poikkeava = 3p</div>
+          </div>
         </div>
       ) : null}
 
-      {controlData["Mittaa verensokeri:"] >= 0.1 && controlData["Mittaa verensokeri: - NEWSscore"] >= 1 ? (
+      {controlData["Mittaa verensokeri:"] >= 0.1 &&
+      controlData["Mittaa verensokeri: - NEWSscore"] >= 1 ? (
         <div
           className={
             "instruction-news-component" +
@@ -168,6 +169,7 @@ function InstructionNewsComponent({
       <div
         onClick={() => {
           // console.log("beep");
+          addNewReport();
           window.scrollTo(0, 0);
           history.push("/instructionPageTwo");
           // console.log(controlData);

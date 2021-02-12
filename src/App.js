@@ -50,10 +50,21 @@ function useCookieState(key, defaultValue = "") {
   return [state, setState];
 }
 
+function useLocalState(key, defaultValue) {
+  const [state, setState] = useState(
+    () => JSON.parse(localStorage.getItem(key)) || defaultValue
+  );
+  useEffect(() => {
+    localStorage.setItem(key, JSON.stringify(state));
+  }, [key, state]);
+  return [state, setState];
+}
+
 function App() {
   const [careType, setCareType] = useCookieState("careType");
   const [personData, setPersonData] = useSessionState("personData", {});
   const [controlData, setcontrolData] = useSessionState("controlData", {});
+  const [reportHistory, setReportHistory] = useLocalState("reportHistory", []);
 
   const [emergencyVisibility, setEmergencyVisibility] = useState(null); // this should start out as null for animation logic
   const [KonsultoitavaVisibility, setKonsultoitavaVisibility] = useState(null);
@@ -81,6 +92,20 @@ function App() {
 
   const generateClassNames = historyAction =>
     historyAction === "PUSH" ? "slide-right" : "slide-left";
+
+  const addNewReport = () =>
+    setReportHistory(
+      [
+        {
+          personData,
+          controlData,
+          NEWSscoreTotal,
+          ControlNEWSscoreTotal,
+          careType
+        },
+        ...reportHistory
+      ].slice(0, 5)
+    );
 
   return (
     <BrowserRouter>
@@ -278,6 +303,7 @@ function App() {
                         setcontrolData={setcontrolData}
                         history={history}
                         NEWSscoreTotal={NEWSscoreTotal}
+                        addNewReport={addNewReport}
                         {...props}
                       />
                     )}
@@ -308,6 +334,7 @@ function App() {
           personData={personData}
           NEWSscoreTotal={NEWSscoreTotal}
           careType={careType}
+          addNewReport={addNewReport}
         />
         <EmergencyPage
           visibility={emergencyVisibility}
@@ -338,6 +365,7 @@ function App() {
           visibility={LastReportVisibility}
           setLastReportVisibility={setLastReportVisibility}
           careType={careType}
+          reportHistory={reportHistory}
         />
       </div>
     </BrowserRouter>

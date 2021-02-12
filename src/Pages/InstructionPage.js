@@ -10,7 +10,8 @@ function InstructionPage({
   controlData,
   setcontrolData,
   NEWSscoreTotal,
-  ControlNEWSscoreTotal
+  ControlNEWSscoreTotal,
+  addNewReport
 }) {
   const [ControlCardVisibility, setControlCardVisibility] = useState(false);
   const [ControlRiskCardVisibility, setControlRiskCardVisibility] = useState(
@@ -43,6 +44,7 @@ function InstructionPage({
           setcontrolData={setcontrolData}
           ControlRiskCardVisibility={ControlRiskCardVisibility}
           setControlRiskCardVisibility={setControlRiskCardVisibility}
+          addNewReport={addNewReport}
         />
       </div>
     </div>

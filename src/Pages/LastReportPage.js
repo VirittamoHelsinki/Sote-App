@@ -48,9 +48,9 @@ function LastReportPage({
         <h2 className="responsiveh2">Viimeisimmät raportit</h2>
         <img className="helsinki" src={helsinki} alt=""></img>
       </div>
-      <div className="hatatilanne-container">
+      <div className="latest-report-container">
         {reportHistory.map((report, index) => (
-          <div key={index}>
+          <div className="last-report-container" key={index}>
             <div className="report-header">
               <p>Raportti - {report.personData.undefined_timestampfull}</p>
               <div
@@ -67,24 +67,26 @@ function LastReportPage({
               </div>
             </div>
             <div id={"dropdown" + index} className="dropdown-content">
-              <ControlledScoreCard
-                NEWSscoreTotal={report.NEWSscoreTotal}
-                personData={report.personData}
-                controlData={report.controlData}
-                ControlNEWSscoreTotal={report.ControlNEWSscoreTotal}
-              />
-              <InstructionCardSecond
-                NEWSscoreTotal={report.NEWSscoreTotal}
-                personData={report.personData}
-                controlData={report.controlData}
-                ControlNEWSscoreTotal={report.ControlNEWSscoreTotal}
-                careType={report.careType}
-              />
+              <div class="instruction-page">
+                <ControlledScoreCard
+                  NEWSscoreTotal={report.NEWSscoreTotal}
+                  personData={report.personData}
+                  controlData={report.controlData}
+                  ControlNEWSscoreTotal={report.ControlNEWSscoreTotal}
+                />
+                <InstructionCardSecond
+                  NEWSscoreTotal={report.NEWSscoreTotal}
+                  personData={report.personData}
+                  controlData={report.controlData}
+                  ControlNEWSscoreTotal={report.ControlNEWSscoreTotal}
+                  careType={report.careType}
+                />
 
-              <ControlReport
-                personData={report.personData}
-                controlData={report.controlData}
-              />
+                <ControlReport
+                  personData={report.personData}
+                  controlData={report.controlData}
+                />
+              </div>
             </div>
           </div>
         ))}

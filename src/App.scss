@@ -357,7 +357,7 @@ body {
         width: 80%;
         margin: 0 auto;
         background-color: rgb(248, 248, 248);
-        color: $sote-green;
+        color: rgb(0, 106, 185);
         border-radius: 3px 3px 0 0;
         border: solid rgb(36, 52, 139) 1px;
         margin-top: 30px;
@@ -699,6 +699,15 @@ body {
             margin: 20px 0;
             border-radius: 4px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
+
+            .emergency {
+
+              cursor: text;
+
+              .emergencyPage-link {
+                pointer-events: none;
+              }
+            }
     
             hr {
               margin: 25px 0;
@@ -893,6 +902,8 @@ body {
                 }
                 tr:nth-child(3) {
                   font-size: 0.8em;
+                  margin-top: 10px;
+                  margin-bottom: 10px;
                   p {
                     font-size: 0.8em !important;
                   }
@@ -1866,6 +1877,10 @@ body {
         margin: 20px 0;
         border-radius: 4px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
+
+        .emergency {
+          cursor: help;
+        }
 
         hr {
           margin: 25px 0;

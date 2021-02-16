@@ -22,7 +22,7 @@ function InstructionCardSecond({
           </p>
         </div>
 
-        <div>
+        <div className="emergency">
           <p
             className="emergencyPage-link page-paragraph"
             onClick={() => {

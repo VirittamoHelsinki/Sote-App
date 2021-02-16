@@ -60,14 +60,14 @@ function LastReportPage({
                 id={"circle-button" + index}
                 className="report-button circle-plus closed"
               >
-                <div class="circle">
-                  <div class="horizontal"></div>
-                  <div class="vertical"></div>
+                <div className="circle">
+                  <div className="horizontal"></div>
+                  <div className="vertical"></div>
                 </div>
               </div>
             </div>
             <div id={"dropdown" + index} className="dropdown-content">
-              <div class="instruction-page">
+              <div className="instruction-page">
                 <ControlledScoreCard
                   NEWSscoreTotal={report.NEWSscoreTotal}
                   personData={report.personData}

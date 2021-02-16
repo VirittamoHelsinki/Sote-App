@@ -332,6 +332,20 @@ body {
       background-color: #fff;
       display: block;
 
+      @media screen and (max-width: 500px) {
+        .reportElement {
+
+          .subject {
+            font-size: 0.8em;
+          }
+
+          .answer {
+            font-size: 0.8em;
+            margin-left: 5px;
+          }
+        }
+      }
+
       .last-report-container {
         display: block;
       }
@@ -422,6 +436,14 @@ body {
             margin-top: -15px;
         }
 
+      }
+
+      @media screen and (max-width: 500px) {
+        .report-header {
+          p {
+            margin-right: 15vw;
+          }
+        }
       }
 
       .report-header:last-child {
@@ -737,6 +759,12 @@ body {
               border-radius: 4px;
               box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
             }
+
+            @media screen and (max-width: 700px) {
+              .white-box {
+                padding: 15px 0px;
+              }
+            }
     
             hr {
               opacity: 0.3;
@@ -774,13 +802,11 @@ body {
             table {
               tr {
                 display: flex;
-                // margin-left: 15px;
                 height: 120px;
-                width: 89vw;
+                width: 74.5vw;
                 overflow: hidden;
                 letter-spacing: 0.5px;
                 line-height: 25.6px;
-                // margin-left: -15px;
               }
     
               tr:nth-of-type(even) {
@@ -814,9 +840,6 @@ body {
               }
     
               @media screen and (max-width: 1490px) {
-                tr {
-                  width: 87vw;
-                }
                 td:nth-child(2) {
                   width: 30vw;
                 }
@@ -824,36 +847,77 @@ body {
                   width: 40vw;
                 }
               }
-    
-              @media screen and (max-width: 1120px) {
+
+              @media screen and (max-width: 700px) {
                 tr {
-                  width: 86vw;
+                  width: 77vw;
+                  font-size: 0.9em;
                 }
               }
-    
-              @media screen and (max-width: 635px) {
+
+              @media screen and (max-width: 600px) {
                 tr {
-                  overflow: visible;
-                  margin-left: -15px;
+                  font-size: 0.9em;
                 }
-                td:nth-child(2) {
-                  max-width: 25vw;
-                }
-                td:nth-child(4) {
-                  width: 25vw;
-                }
-              }
-    
-              @media screen and (max-width: 450px) {
-                tr:nth-child(11) td:nth-child(n + 2) {
-                  font-size: 3.5vw;
-    
-                  span {
-                    font-size: 16px;
+                tr:nth-child(3) {
+                  font-size: 0.9em;
+                  p {
+                    font-size: 0.9em !important;
                   }
                 }
+                tr:nth-child(13) {
+                  font-size: 0.9em;
+                  margin-top: 10px;
+                  p {
+                    font-size: 0.9em !important;
+                  }
+                }
+                td:first-child {
+                  min-width: 100px;
+                  width: 10vw;
+                  margin-left: 10px;
+                  margin-right: -10px;
+                }
+                td:nth-child(2) {
+                  max-width: 30vw;
+                }
+                td:nth-child(4) {
+                  width: 20vw;
+                }
               }
-    
+
+              @media screen and (max-width: 450px) {
+                tr {
+                  font-size: 0.8em;
+                  width: 77vw;
+                }
+                tr:nth-child(3) {
+                  font-size: 0.8em;
+                  p {
+                    font-size: 0.8em !important;
+                  }
+                }
+                tr:nth-child(13) {
+                  font-size: 0.8em;
+                  margin-top: 10px;
+                  p {
+                    font-size: 0.8em !important;
+                  }
+                }
+                td:first-child {
+                  min-width: 100px;
+                  width: 10vw;
+                  margin-left: 10px;
+                  margin-right: -10px;
+                }
+                td:nth-child(2) {
+                  max-width: 76px;
+                }
+                td:nth-child(4) {
+                  width: 20vw;
+                }
+              }
+
               td:first-child p {
                 color: rgb(173, 62, 47);
                 display: contents;

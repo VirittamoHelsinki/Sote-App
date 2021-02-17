@@ -913,11 +913,16 @@ function Report({ personData, controlData }) {
         <div className="reportElement">
           <h3>Tajunta:</h3>
           <div className="flex">
-            <p
+            <div
               style={{
                 width: "100%",
                 fontWeight: "200",
-                overflowWrap: "break-word"
+                overflowWrap: "break-word",
+                display: "block",
+                marginTop: "1em",
+                marginBottom: "1em",
+                marginLeft: "0",
+                marginRight: "0"
               }}
               className="answer"
             >
@@ -928,7 +933,7 @@ function Report({ personData, controlData }) {
                   {personData.Tajunta}
                 </div>
               )}
-            </p>
+            </div>
           </div>
         </div>
 

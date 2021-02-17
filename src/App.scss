@@ -188,7 +188,6 @@ body {
     }
 
     .emergencyPage-topBar {
-      // background-color: $sote-dark-red;
       background-image: url("../src/Images/wave-red.png");
       padding: 26px 8vw 0 8vw;
       box-sizing: border-box;
@@ -341,7 +340,6 @@ body {
 
           .answer {
             font-size: 0.8em !important;
-            // margin-left: 5px;
           }
 
           p.answer {
@@ -472,7 +470,6 @@ body {
 
       .dropdown-content {
         display: block;
-        // display: none // animaatio ei toimi takaisin päin mikäli käytössä on display: none
         position: relative;
         max-height: 0px;
         width: 80%;
@@ -739,7 +736,6 @@ body {
     
             .sote-box {
               width: 100%;
-              // background-color: $sote-blue;
               padding: 15px 20px;
               box-sizing: border-box;
     
@@ -909,7 +905,6 @@ body {
                   tr {
                     width: 69vw;
                     font-size: 0.9em;
-                    // background: red;
                   }
                   tr:nth-child(3) {
                     font-size: 0.9em;
@@ -1033,7 +1028,6 @@ body {
       
               td {
                 display: inherit;
-                // justify-content: center;
                 align-items: center;
               }
             }
@@ -1070,12 +1064,9 @@ body {
         animation-name: dropdown;
         animation-duration: 0.25s;
         animation-timing-function: ease-out;
-        // background-color: red;
-        // tätä voi käyttää testaamiseen
 
         img {
           max-width: 100%;
-          // tätä voi käyttää testaamiseen
         }
       }
 
@@ -1681,7 +1672,6 @@ body {
     z-index: 101;
     padding: 20px 40px 0px 30px;
     border: solid 0px rgb(140, 140, 140);
-    // border-radius: 10px;
     animation-name: modalFade;
     animation-duration: 0.8s;
 
@@ -1975,7 +1965,6 @@ body {
 
         .sote-box {
           width: 100%;
-          // background-color: $sote-blue;
           padding: 15px 20px;
           box-sizing: border-box;
 
@@ -2045,13 +2034,11 @@ body {
         table {
           tr {
             display: flex;
-            // margin-left: 15px;
             height: 120px;
             width: 89vw;
             overflow: hidden;
             letter-spacing: 0.5px;
             line-height: 25.6px;
-            // margin-left: -15px;
           }
 
           tr:nth-of-type(even) {
@@ -2163,7 +2150,6 @@ body {
 
         td {
           display: inherit;
-          // justify-content: center;
           align-items: center;
         }
       }
@@ -2201,7 +2187,6 @@ body {
       border-radius: 52px;
       background-color: #b5b5b5;
       color: #cfcfcf;
-      //font-family:Montserrat;
       font-size: 17px;
       text-align: center;
       box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.56);

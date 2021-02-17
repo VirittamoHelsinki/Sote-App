@@ -1282,7 +1282,6 @@ function Report({ personData, controlData }) {
                   }}
                 >
                   {verensokeriTimestamp2()}
-                  {/* {controlData["Mittaa verensokeri:_timestamp"] ? (controlData["Mittaa verensokeri:_timestamp"]) : (personData["Mittaa verensokeri:_timestamp"])} */}
                 </span>
                 <br />
                   {verensokeri2()}

@@ -22,6 +22,7 @@ import KonsultoitavaPage from "./Pages/KonsultoitavaPage";
 import ABCDEPage from "./Pages/ABCDEPage";
 import NewsPisteytysPage from "./Pages/NewsPisteytysPage";
 import ISBARPage from "./Pages/ISBARPage";
+import LastReportPage from "./Pages/LastReportPage";
 import InstructionPage from "./Pages/InstructionPage";
 import InstructionPageTwo from "./Pages/InstructionPageTwo";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
@@ -49,16 +50,28 @@ function useCookieState(key, defaultValue = "") {
   return [state, setState];
 }
 
+function useLocalState(key, defaultValue) {
+  const [state, setState] = useState(
+    () => JSON.parse(localStorage.getItem(key)) || defaultValue
+  );
+  useEffect(() => {
+    localStorage.setItem(key, JSON.stringify(state));
+  }, [key, state]);
+  return [state, setState];
+}
+
 function App() {
   const [careType, setCareType] = useCookieState("careType");
   const [personData, setPersonData] = useSessionState("personData", {});
   const [controlData, setcontrolData] = useSessionState("controlData", {});
+  const [reportHistory, setReportHistory] = useLocalState("reportHistory", []);
 
   const [emergencyVisibility, setEmergencyVisibility] = useState(null); // this should start out as null for animation logic
   const [KonsultoitavaVisibility, setKonsultoitavaVisibility] = useState(null);
   const [ABCDEVisibility, setABCDEVisibility] = useState(null);
   const [NewsPisteytysVisibility, setNewsPisteytysVisibility] = useState(null);
   const [ISBARVisibility, setISBARVisibility] = useState(null);
+  const [LastReportVisibility, setLastReportVisibility] = useState(null);
   const [menuVisibility, setMenuVisibility] = useState(false);
 
   const NEWSscoreTotal =
@@ -80,6 +93,20 @@ function App() {
   const generateClassNames = historyAction =>
     historyAction === "PUSH" ? "slide-right" : "slide-left";
 
+  const addNewReport = () =>
+    setReportHistory(
+      [
+        {
+          personData,
+          controlData,
+          NEWSscoreTotal,
+          ControlNEWSscoreTotal,
+          careType
+        },
+        ...reportHistory
+      ].slice(0, 5)
+    );
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -91,6 +118,7 @@ function App() {
           setABCDEVisibility={setABCDEVisibility}
           setNewsPisteytysVisibility={setNewsPisteytysVisibility}
           setISBARVisibility={setISBARVisibility}
+          setLastReportVisibility={setLastReportVisibility}
           setPersonData={setPersonData}
           setcontrolData={setcontrolData}
           careType={careType}
@@ -261,6 +289,7 @@ function App() {
                         history={history}
                         NEWSscoreTotal={NEWSscoreTotal}
                         ControlNEWSscoreTotal={ControlNEWSscoreTotal}
+                        addNewReport={addNewReport}
                         {...props}
                       />
                     )}
@@ -275,6 +304,7 @@ function App() {
                         setcontrolData={setcontrolData}
                         history={history}
                         NEWSscoreTotal={NEWSscoreTotal}
+                        addNewReport={addNewReport}
                         {...props}
                       />
                     )}
@@ -305,6 +335,7 @@ function App() {
           personData={personData}
           NEWSscoreTotal={NEWSscoreTotal}
           careType={careType}
+          addNewReport={addNewReport}
         />
         <EmergencyPage
           visibility={emergencyVisibility}
@@ -330,6 +361,12 @@ function App() {
           visibility={ISBARVisibility}
           setISBARVisibility={setISBARVisibility}
           caretype={careType}
+        />
+        <LastReportPage
+          visibility={LastReportVisibility}
+          setLastReportVisibility={setLastReportVisibility}
+          careType={careType}
+          reportHistory={reportHistory}
         />
       </div>
     </BrowserRouter>

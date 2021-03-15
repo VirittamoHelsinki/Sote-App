@@ -1,6 +1,6 @@
 # SoTe - App by Digitalents
 
-This is an application optimized for mobile use commissioned by the Laakso hospital for use by medical personnel and emergency workers upon discovering someone in physical distress. On opening the app the user is presented with a series of questions that must be answered in order to assess the risk of the person in distress. Upon finishing the questionair the user will be presented with instructions on how to proceed. 
+This is an application optimized for mobile use commissioned by the Laakso hospital for use by medical personnel and emergency workers upon discovering someone in physical distress. On opening the app the user is presented with a series of questions that must be answered in order to assess the risk of the person in distress. Upon finishing the questionair the user will be presented with instructions on how to proceed.
 
 This first version of the application has now been taking into use for a pilot. A second version may be developed later.
 
@@ -21,11 +21,10 @@ The finished project can be viewed at: https://sote.azureedge.net/ ( only in Fin
 - **Zohaib Malik** - [ZohaibAM](https://github.com/ZohaibAM)
 - **Toni Nieminen** - [tounsa](https://github.com/tounsa)
 - **Isa Hänninen** - [IsaEmilia](https://github.com/IsaEmilia)
-
+- **Janne Vehniäinen** [JiiVe3](https://github.com/JiiVe3)
 
 See also the list of [contributors](https://github.com/digitalents-helsink/Sote-App/graphs/contributors) who participated in this project.
 
 ## License
 
 This project is licensed under the Boost Software License 1.0
-

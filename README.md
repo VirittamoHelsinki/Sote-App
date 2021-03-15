@@ -21,7 +21,7 @@ The finished project can be viewed at: https://sote.azureedge.net/ ( only in Fin
 - **Zohaib Malik** - [ZohaibAM](https://github.com/ZohaibAM)
 - **Toni Nieminen** - [tounsa](https://github.com/tounsa)
 - **Isa Hänninen** - [IsaEmilia](https://github.com/IsaEmilia)
-- **Janne Vehniäinen** [JiiVe3](https://github.com/JiiVe3)
+- **Janne Vehniäinen** - [JiiVe3](https://github.com/JiiVe3)
 
 See also the list of [contributors](https://github.com/digitalents-helsink/Sote-App/graphs/contributors) who participated in this project.
 
